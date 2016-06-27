@@ -4,17 +4,79 @@
     <title>Ayyy</title>
     <style>
       body {
+        font-family: sans-serif;
+        font-size: 12pt;
+        margin: 1em;
         background: rgba(162,4,214,1);
+        background: linear-gradient(135deg, rgba(162,4,214,1) 0%, rgba(240,164,72,1) 100%);
         background: -moz-linear-gradient(-45deg, rgba(162,4,214,1) 0%, rgba(240,164,72,1) 100%);
         background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(162,4,214,1)), color-stop(100%, rgba(240,164,72,1)));
         background: -webkit-linear-gradient(-45deg, rgba(162,4,214,1) 0%, rgba(240,164,72,1) 100%);
         background: -o-linear-gradient(-45deg, rgba(162,4,214,1) 0%, rgba(240,164,72,1) 100%);
         background: -ms-linear-gradient(-45deg, rgba(162,4,214,1) 0%, rgba(240,164,72,1) 100%);
-        background: linear-gradient(135deg, rgba(162,4,214,1) 0%, rgba(240,164,72,1) 100%);
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a204d6', endColorstr='#f0a448', GradientType=1 );
+      }
+      p {
+        width: 600px;
+        margin: 0 auto;
+        padding: .25em;
+        padding-bottom: .5em;
+        line-height: 19pt;
+        text-align: justify;
+      }
+      ::selection {
+        background: #FF33CC;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+      }
+      h3.rant {
+        width: 600px;
+        margin: 0 auto;
+        padding-bottom: 1.25em;
+      }
+      p.rant {
+        /* font-size: 600%; */
+        font-weight: lighter;
+      }
+      #bottom-floater {
+        position: fixed;
+        right: .5em;
+        bottom: .5em;
+        z-index: -1;
+        /*
+        -webkit-box-shadow: 7px 7px 22px -1px rgba(0,0,0,0.34);
+        -moz-box-shadow: 7px 7px 22px -1px rgba(0,0,0,0.34);
+        box-shadow: 7px 7px 22px -1px rgba(0,0,0,0.34);
+        */
       }
     </style>
   </head>
   <body>
+    <div class="container">
+      <h3 class="rant">REQUEST FOR URGENT BUSINESS RELATIONSHIP</h4>
+      <p class="rant">FIRST, I MUST SOLICIT YOUR STRICTEST CONFIDENCE IN THIS TRANSACTION. THIS IS BY VIRTUE OF ITS NATURE AS BEING UTTERLY CONFIDENTIAL AND 'TOP SECRET'. I AM SURE AND HAVE CONFIDENCE OF YOUR ABILITY AND RELIABILITY TO PROSECUTE A TRANSACTION OF THIS GREAT MAGNITUDE INVOLVING A PENDING TRANSACTION REQUIRING MAXIIMUM CONFIDENCE.</p>
+      <p class="rant">WE ARE TOP OFFICIAL OF THE FEDERAL GOVERNMENT CONTRACT REVIEW PANEL WHO ARE INTERESTED IN IMPORATION OF GOODS INTO OUR COUNTRY WITH FUNDS WHICH ARE PRESENTLY TRAPPED IN NIGERIA. IN ORDER TO COMMENCE THIS BUSINESS WE SOLICIT YOUR ASSISTANCE TO ENABLE US TRANSFER INTO YOUR ACCOUNT THE SAID TRAPPED FUNDS. 
+      <p class="rant">THE SOURCE OF THIS FUND IS AS FOLLOWS; DURING THE LAST MILITARY REGIME HERE IN NIGERIA, THE GOVERNMENT OFFICIALS SET UP COMPANIES AND AWARDED THEMSELVES CONTRACTS WHICH WERE GROSSLY OVER-INVOICED IN VARIOUS MINISTRIES. THE PRESENT CIVILIAN GOVERNMENT SET UP A CONTRACT REVIEW PANEL AND WE HAVE IDENTIFIED A LOT OF INFLATED CONTRACT FUNDS WHICH ARE PRESENTLY FLOATING IN THE CENTRAL BANK OF NIGERIA READY FOR PAYMENT.</p>
+      <p class="rant">HOWEVER, BY VIRTUE OF OUR POSITION AS CIVIL SERVANTS AND MEMBERS OF THIS PANEL, WE CANNOT ACQUIRE THIS MONEY IN OUR NAMES. I HAVE THEREFORE, BEEN DELEGATED AS A MATTER OF TRUST BY MY COLLEAGUES OF THE PANEL TO LOOK FOR AN OVERSEAS PARTNER INTO WHOSE ACCOUNT WE WOULD TRANSFER THE SUM OF US$21,320,000.00(TWENTY ONE MILLION, THREE HUNDRED AND TWENTY THOUSAND U.S DOLLARS). HENCE WE ARE WRITING YOU THIS LETTER. WE HAVE AGREED TO SHARE THE MONEY THUS; 1. 20% FOR THE ACCOUNT OWNER 2. 70% FOR US (THE OFFICIALS) 3. 10% TO BE USED IN SETTLING TAXATION AND ALL LOCAL AND FOREIGN EXPENSES. IT IS FROM THE 70% THAT WE WISH TO COMMENCE THE IMPORTATION BUSINESS.</p>
+      <p class="rant">PLEASE,NOTE THAT THIS TRANSACTION IS 100% SAFE AND WE HOPE TO COMMENCE THE TRANSFER LATEST SEVEN (7) BANKING DAYS FROM THE DATE OF THE RECEIPT OF THE FOLLOWING INFORMATIOM BY TEL/FAX; 234-1-7740449, YOUR COMPANY'S SIGNED, AND STAMPED LETTERHEAD PAPER THE ABOVE INFORMATION WILL ENABLE US WRITE LETTERS OF CLAIM AND JOB DESCRIPTION RESPECTIVELY. THIS WAY WE WILL USE YOUR COMPANY'S NAME TO APPLY FOR PAYMENT AND RE-AWARD THE CONTRACT IN YOUR COMPANY'S NAME.</p>
+      <p class="rant">WE ARE LOOKING FORWARD TO DOING THIS BUSINESS WITH YOU AND SOLICIT YOUR CONFIDENTIALITY IN THIS TRANSATION. PLEASE ACKNOWLEDGE THE RECEIPT OF THIS LETTER USING THE ABOVE TEL/FAX NUMBERS. I WILL SEND YOU DETAILED INFORMATION OF THIS PENDING PROJECT WHEN I HAVE HEARD FROM YOU.</p>
+      <p class="rant">YOURS FAITHFULLY,</p>
+      <p class="rant">DR CLEMENT OKON</p>
+      <p class="rant">NOTE; PLEASE QUOTE THIS REFERENCE NUMBER (VE/S/09/99) IN ALL YOUR RESPONSES.</p>
+    </div>
+    <img src="hackers.gif"  id="bottom-floater">
+    <script>
+      ~function () {
+        var flag = true;
+        ~function loop() {
+          var el = document.getElementById('bottom-floater');
+          var style = flag ? 'none' : 'block';
+          el.style.display = style;
+          flag = !flag;
+          setTimeout(loop, 2000);
+        }();
+      }();
+    </script>
   </body>
 </html>

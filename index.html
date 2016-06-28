@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Ayyy</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.9.25/paper-full.min.js"></script>
     <style>
       body {
         font-family: sans-serif;
@@ -50,9 +51,18 @@
         box-shadow: 7px 7px 22px -1px rgba(0,0,0,0.34);
         */
       }
+      #it {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        z-index: -10;
+      }
     </style>
   </head>
   <body>
+    <canvas height=1200 width=1200 id="it"></canvas>
     <div class="container">
       <h3 class="rant">REQUEST FOR URGENT BUSINESS RELATIONSHIP</h4>
       <p class="rant">FIRST, I MUST SOLICIT YOUR STRICTEST CONFIDENCE IN THIS TRANSACTION. THIS IS BY VIRTUE OF ITS NATURE AS BEING UTTERLY CONFIDENTIAL AND 'TOP SECRET'. I AM SURE AND HAVE CONFIDENCE OF YOUR ABILITY AND RELIABILITY TO PROSECUTE A TRANSACTION OF THIS GREAT MAGNITUDE INVOLVING A PENDING TRANSACTION REQUIRING MAXIIMUM CONFIDENCE.</p>
@@ -66,6 +76,19 @@
       <p class="rant">NOTE; PLEASE QUOTE THIS REFERENCE NUMBER (VE/S/09/99) IN ALL YOUR RESPONSES.</p>
     </div>
     <img src="hackers.gif"  id="bottom-floater">
+    <script src="src/umbrella.js"></script>
+    <script>
+      ~function() {
+
+        var app = new App('it');
+
+        ~function animationLoop() {
+          app.update();
+          app.draw();
+          // window.requestAnimationFrame(animationLoop);
+        }();
+      }();
+    </script>
     <script>
       ~function () {
         var flag = true;
@@ -74,7 +97,7 @@
           var style = flag ? 'none' : 'block';
           el.style.display = style;
           flag = !flag;
-          setTimeout(loop, 2000);
+          // setTimeout(loop, 2000);
         }();
       }();
     </script>

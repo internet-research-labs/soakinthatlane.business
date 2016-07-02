@@ -3,6 +3,7 @@ Q<!doctype html>
   <head>
     <title>Ayyy</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.9.25/paper-full.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <style>
       body {
         font-family: sans-serif;
@@ -46,10 +47,12 @@ Q<!doctype html>
       p.rant {
         /* font-size: 600%; */
         font-weight: lighter;
+        color: yellow;
       }
       #pallyBox {
         position: fixed;
         margin: 5% auto;
+        top:50px;
         left: 0;
         right: 0;
       }
@@ -148,6 +151,12 @@ Q<!doctype html>
           }
       }
       //-->
+  </script>
+  <script>
+    $("#pallyBox").click(function(){
+        $("#pallyBox").animate({top: '+=27px'});
+        //$("p").hide();
+    });
   </script>
   </body>
 </html>

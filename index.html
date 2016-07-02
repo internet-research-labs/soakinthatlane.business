@@ -1,4 +1,4 @@
-<!doctype html>
+Q<!doctype html>
 <html>
   <head>
     <title>Ayyy</title>
@@ -17,6 +17,10 @@
         background: -ms-linear-gradient(-45deg, rgba(162,4,214,1) 0%, rgba(240,164,72,1) 100%);
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a204d6', endColorstr='#f0a448', GradientType=1 );
       }
+      @font-face {
+        font-family: "Grinched2";
+        src: url('Grinched2.ttf');
+      }
       p {
         width: 600px;
         margin: 0 auto;
@@ -32,17 +36,22 @@
         width: 100%;
       }
       h3.rant {
+        font-family: 'Grinched2';
         width: 600px;
         margin: 0 auto;
         padding-bottom: 1.25em;
+        color: yellow;
+        font-size: 60px;
       }
       p.rant {
         /* font-size: 600%; */
         font-weight: lighter;
       }
       #pallyBox {
-        margin-left: auto;
-        margin-right: auto;
+        position: fixed;
+        margin: 5% auto;
+        left: 0;
+        right: 0;
       }
       #bottom-floater {
         position: fixed;
@@ -54,6 +63,11 @@
         -moz-box-shadow: 7px 7px 22px -1px rgba(0,0,0,0.34);
         box-shadow: 7px 7px 22px -1px rgba(0,0,0,0.34);
         */
+      }
+      #boom {
+        position: fixed;
+        bottom: 0px;
+        z-index: -2;
       }
       #it {
         position: fixed;
@@ -68,14 +82,14 @@
   <body>
     <canvas height=1200 width=1200 id="it"></canvas>
       <div class="container">
-        <div>
+        <div onmouseover="rotateDIV()" id="pallyBox" style="transform: rotate(360deg);">
           <img src="Paladin.gif">
           <img src="Paladin.gif">
           <img src="Paladin.gif">
           <img src="Paladin.gif">
           <img src="Paladin.gif">
         </div>
-      <h3 class="rant">REQUEST FOR URGENT BUSINESS RELATIONSHIP</h4>
+      <h3 class="rant">SOAK DAT</h3>
       <p class="rant">FIRST, I MUST SOLICIT YOUR STRICTEST CONFIDENCE IN THIS TRANSACTION. THIS IS BY VIRTUE OF ITS NATURE AS BEING UTTERLY CONFIDENTIAL AND 'TOP SECRET'. I AM SURE AND HAVE CONFIDENCE OF YOUR ABILITY AND RELIABILITY TO PROSECUTE A TRANSACTION OF THIS GREAT MAGNITUDE INVOLVING A PENDING TRANSACTION REQUIRING MAXIIMUM CONFIDENCE.</p>
       <p class="rant">WE ARE TOP OFFICIAL OF THE FEDERAL GOVERNMENT CONTRACT REVIEW PANEL WHO ARE INTERESTED IN IMPORATION OF GOODS INTO OUR COUNTRY WITH FUNDS WHICH ARE PRESENTLY TRAPPED IN NIGERIA. IN ORDER TO COMMENCE THIS BUSINESS WE SOLICIT YOUR ASSISTANCE TO ENABLE US TRANSFER INTO YOUR ACCOUNT THE SAID TRAPPED FUNDS. 
       <p class="rant">THE SOURCE OF THIS FUND IS AS FOLLOWS; DURING THE LAST MILITARY REGIME HERE IN NIGERIA, THE GOVERNMENT OFFICIALS SET UP COMPANIES AND AWARDED THEMSELVES CONTRACTS WHICH WERE GROSSLY OVER-INVOICED IN VARIOUS MINISTRIES. THE PRESENT CIVILIAN GOVERNMENT SET UP A CONTRACT REVIEW PANEL AND WE HAVE IDENTIFIED A LOT OF INFLATED CONTRACT FUNDS WHICH ARE PRESENTLY FLOATING IN THE CENTRAL BANK OF NIGERIA READY FOR PAYMENT.</p>
@@ -86,6 +100,7 @@
       <p class="rant">DR CLEMENT OKON</p>
       <p class="rant">NOTE; PLEASE QUOTE THIS REFERENCE NUMBER (VE/S/09/99) IN ALL YOUR RESPONSES.</p>
     </div>
+    <img src="fireball.gif-c200" id="boom" height="1000" width="1000">
     <img src="hackers.gif"  id="bottom-floater">
     <script src="src/umbrella.js"></script>
     <script>
@@ -112,5 +127,27 @@
         }();
       }();
     </script>
+    <script>
+      <!--
+      var x,n=0,ny=0,rotINT,rotYINT
+      function rotateDIV() {
+        x=document.getElementById("pallyBox")
+        clearInterval(rotINT)
+        rotINT=setInterval("startRotate()",10)
+      }
+      function startRotate() {
+        n=n+1
+        x.style.transform="rotate(" + n + "deg)"
+        x.style.webkitTransform="rotate(" + n + "deg)"
+        x.style.OTransform="rotate(" + n + "deg)"
+        x.style.MozTransform="rotate(" + n + "deg)"
+        if (n==180 || n==360)
+          {
+          clearInterval(rotINT)
+          if (n==360){n=0}
+          }
+      }
+      //-->
+  </script>
   </body>
 </html>

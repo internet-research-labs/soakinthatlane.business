@@ -1,0 +1,23 @@
+{
+  "name": "soakinthatlane.business",
+  "version": "0.0.1",
+  "description": "ayyy",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/internet-research-labs/soakinthatlane.business"
+  },
+  "keywords": [
+    "soak",
+    "dat"
+  ],
+  "author": "IRL",
+  "license": "IRL",
+  "bugs": {
+    "url": "https://github.com/internet-research-labs/soakinthatlane.business/issues"
+  },
+  "homepage": "https://github.com/internet-research-labs/soakinthatlane.business"
+}

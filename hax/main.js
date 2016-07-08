@@ -117,7 +117,6 @@ function Blinker(element, options) {
 var proto = Blinker.prototype;
 
 proto._initialize = function() {
-	console.log('initial');
 	setTimeout(this._on.bind(this), this._delay);
 }
 

@@ -33,9 +33,25 @@ gulp.task('hax', function(){
     .pipe(gulp.dest('hax/'))
 });
 
-gulp.task('default', function(){
-  gulp.watch("src/swag/**/*.scss", ['swag']);
-  gulp.watch("src/hax/**/*.js", ['hax']);
+gulp.task('head', function(){
+  return gulp.src('src/hax/head.js')
+    .pipe(plumber({
+      errorHandler: function (error) {
+        console.log(error.message);
+        this.emit('end');
+    }}))
+    .pipe(browserify({
+      insertGlobals : false
+    }))
+    .pipe(concat('head.js'))
+    .pipe(gulp.dest('hax/'))
 });
 
-gulp.task('all', ['swag', 'hax']);
+
+
+gulp.task('default', function(){
+  gulp.watch("src/swag/**/*.scss", ['swag']);
+  gulp.watch("src/hax/**/*.js", ['hax', 'head']);
+});
+
+gulp.task('all', ['swag', 'hax', 'head']);

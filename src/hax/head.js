@@ -5,11 +5,10 @@ var Main = (function() {
 	return {
 
 		initialize: function() {
+			console.log('do something before dom load maybe... really idk');
+		},
 
-			console.log('do stuff before dom loads?');
-
-			return this;
-		}
+	};
 
 }());
 

@@ -1,7 +1,7 @@
 'use strict';
 
-function App(asdf){
-	this._canvas = asdf;
+function App(element){
+	this._canvas = element;
 	this._width = this._canvas.width;
 	this._height = this._canvas.height;
 	this._context = this._canvas.getContext('2d');

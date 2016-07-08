@@ -1,0 +1,13 @@
+
+
+.blinker {
+	visibility: hidden;
+	opacity: 0;
+	display: none;
+
+	&.blink {
+		visibility: visible;
+		opacity: 1;
+		display: block;
+	}
+}

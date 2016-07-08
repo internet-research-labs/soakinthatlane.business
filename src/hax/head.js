@@ -6,7 +6,7 @@ var Main = (function() {
 
 		initialize: function() {
 
-			console.log('do stuff before domloads?');
+			console.log('do stuff before dom loads?');
 
 			return this;
 		}

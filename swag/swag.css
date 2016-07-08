@@ -1,6 +1,73 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.image-hackers {
+  width: 500px;
+  height: 212px;
+  background-size: 500px 212px;
+  background-repeat: no-repeat;
+  background-image: url("../hackers.gif"); }
+
+.image-boom {
+  width: 1000px;
+  height: 1000px;
+  background-size: 1000px 1000px;
+  background-repeat: no-repeat;
+  background-image: url("../fireball.gif-c200"); }
+
+.image-pally {
+  width: 132px;
+  height: 173px;
+  background-size: 132px 173px;
+  background-repeat: no-repeat;
+  background-image: url("../Paladin.gif"); }
+
+.blinker {
+  visibility: hidden;
+  opacity: 0;
+  display: none; }
+  .blinker.blink {
+    visibility: visible;
+    opacity: 1;
+    display: block; }
+
 @font-face {
   font-family: "Grinched2";
-  src: url("Grinched2.ttf"); }
+  src: url("../Grinched2.ttf"); }
 
 .soak {
   font-family: sans-serif;
@@ -41,15 +108,17 @@
     top: 50px;
     left: 0;
     right: 0; }
-  .soak .bottom-floater {
+  .soak .image-hackers {
     position: fixed;
     right: .5em;
     bottom: .5em;
     z-index: -1; }
-  .soak .boom {
+  .soak .image-boom {
     position: fixed;
     bottom: 0px;
     z-index: -2; }
+  .soak .image-pally {
+    display: inline-block; }
   .soak .twitchPlaya .live_embed_player_flash {
     position: fixed;
     top: -5%;

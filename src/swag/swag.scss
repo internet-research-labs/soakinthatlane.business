@@ -1,7 +1,11 @@
+@import "swaggy/reset";
+@import "swaggy/images";
+@import "swaggy/blinker";
+
 
 @font-face {
 	font-family: "Grinched2";
-	src: url('Grinched2.ttf');
+	src: url('../Grinched2.ttf');
 }
 
 .soak {
@@ -48,19 +52,24 @@
 		top:50px;
 		left: 0;
 		right: 0;
+
 	}
 
-	.bottom-floater {
+	.image-hackers {
 		position: fixed;
 		right: .5em;
 		bottom: .5em;
 		z-index: -1;
 	}
 
-	.boom {
+	.image-boom {
 		position: fixed;
 		bottom: 0px;
 		z-index: -2;
+	}
+
+	.image-pally {
+		display: inline-block;
 	}
 
     .twitchPlaya {

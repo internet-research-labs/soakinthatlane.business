@@ -8,7 +8,7 @@ function Blinker(element, options) {
 	this._options = options || [];
 	this._duration = options.duration || 2000;
 	this._delay = options.delay || 2000;
-	this._blink = true;
+	this._blink = options.blink || true;
 	this._cl = this._element.classList;
 
 	this._initialize();
@@ -18,7 +18,9 @@ function Blinker(element, options) {
 var proto = Blinker.prototype;
 
 proto._initialize = function() {
-	setTimeout(this._on.bind(this), this._delay);
+	if(this._blink) {
+		setTimeout(this._on.bind(this), this._delay);
+	}
 }
 
 proto._on = function() {

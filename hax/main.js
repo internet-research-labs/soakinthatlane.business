@@ -44,8 +44,8 @@ module.exports = Main.initialize();
 },{"./stuff/App":2,"./stuff/Blinker":3}],2:[function(require,module,exports){
 'use strict';
 
-function App(asdf){
-	this._canvas = asdf;
+function App(element){
+	this._canvas = element;
 	this._width = this._canvas.width;
 	this._height = this._canvas.height;
 	this._context = this._canvas.getContext('2d');
@@ -107,7 +107,7 @@ function Blinker(element, options) {
 	this._options = options || [];
 	this._duration = options.duration || 2000;
 	this._delay = options.delay || 2000;
-	this._blink = true;
+	this._blink = options.blink || true;
 	this._cl = this._element.classList;
 
 	this._initialize();
@@ -117,7 +117,9 @@ function Blinker(element, options) {
 var proto = Blinker.prototype;
 
 proto._initialize = function() {
-	setTimeout(this._on.bind(this), this._delay);
+	if(this._blink) {
+		setTimeout(this._on.bind(this), this._delay);
+	}
 }
 
 proto._on = function() {

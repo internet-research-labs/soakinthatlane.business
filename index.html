@@ -3,10 +3,10 @@
     <head>
         <script src="hax/head.js"></script>
         <title>Ayyy</title>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.9.25/paper-full.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.9.25/paper-full.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.0/react-dom.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.0/react.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.0/react.min.js"></script> -->
+        <script src="hax/head.js"></script>
         <link rel="stylesheet" href="./swag/swag.css" type="text/css">
 
         <script type="text/javascript">
@@ -24,7 +24,7 @@
         <div class="main" role="main">
             <canvas height=1200 width=1200 id="it" class="it"></canvas>
             <section class="section-container">
-                <div onmouseover="rotateDIV()" id="pallyBox" class="pallyBox" style="transform: rotate(360deg);">
+                <div id="pallyBox" class="pallyBox" data-rotate='{"move": 27}'>
                     <figure class="image-pally"></figure>
                     <figure class="image-pally"></figure>
                     <figure class="image-pally"></figure>
@@ -61,35 +61,6 @@
 
         </div><!-- main -->
 
-        <script>
-        <!--
-        var x,n=0,ny=0,rotINT,rotYINT
-        function rotateDIV() {
-        x=document.getElementById("pallyBox")
-        clearInterval(rotINT)
-        rotINT=setInterval("startRotate()",10)
-        }
-        function startRotate() {
-        n=n+1
-        x.style.transform="rotate(" + n + "deg)"
-        x.style.webkitTransform="rotate(" + n + "deg)"
-        x.style.OTransform="rotate(" + n + "deg)"
-        x.style.MozTransform="rotate(" + n + "deg)"
-        if (n==180 || n==360)
-        {
-        clearInterval(rotINT)
-        if (n==360){n=0}
-        }
-        }
-        //-->
-        </script>
-        <script>
-        $("#pallyBox").click(function(){
-        $("#pallyBox").animate({top: '+=27px'});
-        //$("p").hide();
-        
-        });
-        </script>
         <script src="hax/main.js"></script>
         <!--<audio preload="auto" autoplay>
         <source src="omg/skrillez.mp3" type="audio/mpeg">

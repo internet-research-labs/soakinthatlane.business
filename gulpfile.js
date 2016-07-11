@@ -1,11 +1,11 @@
-var gulp = require('gulp'),
-    plumber = require('gulp-plumber'),
-    rename = require('gulp-rename');
-var browserify = require('gulp-browserify');
+var gulp = require('gulp');
+var plumber = require('gulp-plumber');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 var concat = require('gulp-concat');
 var sass = require('gulp-sass');
+var webpack = require('webpack-stream');
+var named = require('vinyl-named');
 
 gulp.task('swag', function(){
   gulp.src(['src/swag/swag.scss'])
@@ -20,38 +20,15 @@ gulp.task('swag', function(){
 });
 
 gulp.task('hax', function(){
-  return gulp.src('src/hax/main.js')
-    .pipe(plumber({
-      errorHandler: function (error) {
-        console.log(error.message);
-        this.emit('end');
-    }}))
-    .pipe(browserify({
-      insertGlobals : false
-    }))
-    .pipe(concat('main.js'))
+  return gulp.src(['src/hax/main.js', 'src/hax/head.js'])
+    .pipe(named())
+    .pipe(webpack())
     .pipe(gulp.dest('hax/'))
 });
-
-gulp.task('head', function(){
-  return gulp.src('src/hax/head.js')
-    .pipe(plumber({
-      errorHandler: function (error) {
-        console.log(error.message);
-        this.emit('end');
-    }}))
-    .pipe(browserify({
-      insertGlobals : false
-    }))
-    .pipe(concat('head.js'))
-    .pipe(gulp.dest('hax/'))
-});
-
-
 
 gulp.task('default', function(){
   gulp.watch("src/swag/**/*.scss", ['swag']);
-  gulp.watch("src/hax/**/*.js", ['hax', 'head']);
+  gulp.watch("src/hax/**/*.js", ['hax']);
 });
 
-gulp.task('all', ['swag', 'hax', 'head']);
+gulp.task('all', ['swag', 'hax']);

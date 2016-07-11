@@ -55,7 +55,8 @@
 	'use strict';
 
 	var App = __webpack_require__(3);
-	var Blinker = __webpack_require__(4)
+	var Blinker = __webpack_require__(4);
+	var Rotator = __webpack_require__(5);
 
 
 	var Main = (function() {
@@ -64,11 +65,12 @@
 
 	        initialize: function() {
 	            this._blinkingStuff = [];
+	            this._rotatingStuff = [];
 
 	            this._initApp();
 	            this._initBlinkers();
-	            console.log('oh shit whadup');
-	            //var pallies = document.getElementById('');
+	            this._initRotate();
+
 	        },
 	        _initApp: function() {
 	            var canvas = document.getElementById('it');
@@ -76,14 +78,25 @@
 	            myApp.draw();
 	        },
 	        _initBlinkers: function() {
-	            this._blinkingElements = document.querySelectorAll('[data-blink]');
-	            var myLength = this._blinkingElements.length;
+	            var blinkingElements = document.querySelectorAll('[data-blink]');
+	            var myLength = blinkingElements.length;
 	            for (var i = 0; i < myLength; i++) {
-	                var element = this._blinkingElements[i];
+	                var element = blinkingElements[i];
 	                var optionsData = element.getAttribute('data-blink');
 	                var options = JSON.parse(optionsData);
 	                var myBlinky = new Blinker(element, options);
 	                this._blinkingStuff.push(myBlinky);
+	            }
+	        },
+	        _initRotate: function() {
+	            var rotatingElements = document.querySelectorAll('[data-rotate]');
+	            var myLength = rotatingElements.length;
+	            for (var i = 0; i < myLength; i++) {
+	                var element = rotatingElements[i];
+	                var optionsData = element.getAttribute('data-rotate');
+	                var options = JSON.parse(optionsData);
+	                var myRotator = new Rotator(element, options);
+	                this._rotatingStuff.push(myRotator);
 	            }
 	        }
 
@@ -205,6 +218,139 @@
 	}
 
 	module.exports = Blinker;
+
+/***/ },
+/* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var prefix = __webpack_require__(6);
+
+	function Rotator(element, options){
+	    this._element = element;
+	    this._n = 0;
+	    this._ny = 0;
+	    this._rotInt = 0;
+	    this._rotYInt = 0;
+
+	    this._transform = prefix('transform');
+	    this._translate = 0;
+	    this._move = options.move || 27;
+
+	    this._on = false;
+
+	    this._initialize();
+
+	}
+
+	var proto = Rotator.prototype;
+
+	proto._initialize = function() {
+	    this._element.addEventListener('mouseover', this._mouseOn.bind(this));
+
+	    this._element.addEventListener('mouseout', this._mouseOff.bind(this));
+
+	    this._element.addEventListener('click', this._click.bind(this));
+	}
+
+	proto._click = function(){
+	    this._translate = this._translate + this._move;
+	    this._updateElement();
+	}
+
+	proto._mouseOn = function() {
+	    this._on = true;
+	    this._rotate();
+	}
+
+	proto._mouseOff = function() {
+	    this._on = false;
+	}
+
+	proto._rotate = function() {
+	    clearInterval(this._rotINT);
+	    this._rotINT = setInterval(this._startRotate.bind(this), 10);
+
+	}
+
+	proto._startRotate = function() {
+	    this._n = this._n + 1;
+
+	    if ((this._n == 180) || (this._n == 360)) {
+	        clearInterval(this._rotINT);
+	    }
+
+	    if (this._n == 360) {this._n = 0;}
+
+	    this._updateElement();
+
+	    if (this._on) {
+	        requestAnimationFrame(this._startRotate.bind(this));
+	    }
+	}
+
+	proto._updateElement = function() {
+	    var myTransform = 'rotate(' + this._n + 'deg) translate(0px,' + this._translate + 'px)';
+	    this._element.style[this._transform] = myTransform;
+
+	}
+
+	module.exports = Rotator;
+
+/***/ },
+/* 6 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	var style = document.createElement('p').style,
+	    prefixes = 'O ms Moz webkit'.split(' '),
+	    hasPrefix = /^(o|ms|moz|webkit)/,
+	    upper = /([A-Z])/g,
+	    memo = {};
+
+	function get(key){
+	    return (key in memo) ? memo[key] : memo[key] = prefix(key);
+	}
+
+	function prefix(key){
+	    var capitalizedKey = key.replace(/-([a-z])/g, function(s, match){
+	            return match.toUpperCase();
+	        }),
+	        i = prefixes.length,
+	        name;
+
+	    if (style[capitalizedKey] !== undefined) return capitalizedKey;
+
+	    capitalizedKey = capitalize(key);
+
+	    while (i--) {
+	        name = prefixes[i] + capitalizedKey;
+	        if (style[name] !== undefined) return name;
+	    }
+
+	    throw new Error('unable to prefix ' + key);
+	}
+
+	function capitalize(str){
+	    return str.charAt(0).toUpperCase() + str.slice(1);
+	}
+
+	function dashedPrefix(key){
+	    var prefixedKey = get(key),
+	        upper = /([A-Z])/g;
+
+	    if (upper.test(prefixedKey)) {
+	        prefixedKey = (hasPrefix.test(prefixedKey) ? '-' : '') + prefixedKey.replace(upper, '-$1');
+	    }
+
+	    return prefixedKey.toLowerCase();
+	}
+
+	module.exports = get;
+	module.exports.dash = dashedPrefix;
+
 
 /***/ }
 /******/ ]);

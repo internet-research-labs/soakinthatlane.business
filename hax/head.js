@@ -58,8 +58,8 @@
 	    return {
 
 	        initialize: function() {
-	            console.log('do something before dom load maybe... really idk');
-	        },
+	            //console.log('do something before dom load maybe... really idk');
+	        }
 
 	    };
 

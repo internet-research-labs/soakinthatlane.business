@@ -4,8 +4,8 @@
 
 
 @font-face {
-	font-family: "Grinched2";
-	src: url('../Grinched2.ttf');
+    font-family: "Grinched2";
+    src: url('../Grinched2.ttf');
 }
 
 .soak {
@@ -15,80 +15,80 @@
     background: rgba(166,224,221,1);
     background: linear-gradient(to bottom, rgba(166,224,221,1) 0%, rgba(252,223,174,1) 100%);
 
-	p {
-		width: 600px;
-		margin: 0 auto;
-		padding: .25em;
-		padding-bottom: .5em;
-		line-height: 19pt;
-		text-align: justify;
-	}
+    p {
+        width: 600px;
+        margin: 0 auto;
+        padding: .25em;
+        padding-bottom: .5em;
+        line-height: 19pt;
+        text-align: justify;
+    }
 
-	::selection {
-		background: #FF33CC;
-		position: fixed;
-		height: 100%;
-		width: 100%;
-	}
+    ::selection {
+        background: #FF33CC;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+    }
 
-	.rant {
-		&-header {
-			font-family: 'Grinched2';
-			width: 600px;
-			margin: 0 auto;
-			padding-bottom: 1.25em;
-			color: yellow;
-			font-size: 60px;
-		}
-		&-text {
-			font-weight: lighter;
-			color: yellow;
-		}
-	}
+    .rant {
+        &-header {
+            font-family: 'Grinched2';
+            width: 600px;
+            margin: 0 auto;
+            padding-bottom: 1.25em;
+            color: yellow;
+            font-size: 60px;
+        }
+        &-text {
+            font-weight: lighter;
+            color: yellow;
+        }
+    }
 
-	.pallyBox {
-		position: fixed;
-		margin: 5% auto;
-		top:50px;
-		left: 0;
-		right: 0;
+    .pallyBox {
+        position: fixed;
+        margin: 5% auto;
+        top:50px;
+        left: 0;
+        right: 0;
 
-	}
+    }
 
-	.image-hackers {
-		position: fixed;
-		right: .5em;
-		bottom: .5em;
-		z-index: -1;
-	}
+    .image-hackers {
+        position: fixed;
+        right: .5em;
+        bottom: .5em;
+        z-index: -1;
+    }
 
-	.image-boom {
-		position: fixed;
-		bottom: 0px;
-		z-index: -2;
-	}
+    .image-boom {
+        position: fixed;
+        bottom: 0px;
+        z-index: -2;
+    }
 
-	.image-pally {
-		display: inline-block;
-	}
+    .image-pally {
+        display: inline-block;
+    }
 
     .twitchPlaya {
-		.live_embed_player_flash {
-			position: fixed;
-			top: -5%;
-			left: -5%;
-			z-index: -3;
-			width: 110%;
-			height: 110%;
-		}
-	}
+        .live_embed_player_flash {
+            position: fixed;
+            top: -5%;
+            left: -5%;
+            z-index: -3;
+            width: 110%;
+            height: 110%;
+        }
+    }
 
-	.it {
-		position: fixed;
-		width: 100%;
-		height: 100%;
-		left: 0;
-		top: 0;
-		z-index: -10;
-	}
+    .it {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        z-index: -10;
+    }
 }

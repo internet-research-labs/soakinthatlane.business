@@ -1,0 +1,19 @@
+@mixin image($width, $height, $url) {
+    width: $width;
+    height: $height;
+    background-size: $width $height;
+    background-repeat: no-repeat;
+    background-image: url($url);
+}
+
+.image-hackers {
+    @include image(500px, 212px, '../hackers.gif');
+}
+
+.image-boom {
+    @include image(1000px, 1000px, '../fireball.gif-c200');
+}
+
+.image-pally {
+    @include image(132px, 173px, '../Paladin.gif');
+}

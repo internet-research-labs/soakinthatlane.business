@@ -19,5 +19,15 @@
   "bugs": {
     "url": "https://github.com/internet-research-labs/soakinthatlane.business/issues"
   },
-  "homepage": "https://github.com/internet-research-labs/soakinthatlane.business"
+  "homepage": "https://github.com/internet-research-labs/soakinthatlane.business",
+  "devDependencies": {
+    "autoprefixer": "^6.3.7",
+    "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^6.1.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2"
+  }
 }

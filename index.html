@@ -1,220 +1,87 @@
-Q<!doctype html>
+<!doctype html>
 <html>
-  <head>
-    <title>Ayyy</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.9.25/paper-full.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.0/react-dom.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.0/react.min.js"></script>
-    <style>
-      body {
-        font-family: sans-serif;
-        font-size: 12pt;
-        margin: 1em;
-        background: rgba(166,224,221,1);
-        background: -moz-linear-gradient(top, rgba(166,224,221,1) 0%, rgba(252,223,174,1) 100%);
-        background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(166,224,221,1)), color-stop(100%, rgba(252,223,174,1)));
-        background: -webkit-linear-gradient(top, rgba(166,224,221,1) 0%, rgba(252,223,174,1) 100%);
-        background: -o-linear-gradient(top, rgba(166,224,221,1) 0%, rgba(252,223,174,1) 100%);
-        background: -ms-linear-gradient(top, rgba(166,224,221,1) 0%, rgba(252,223,174,1) 100%);
-        background: linear-gradient(to bottom, rgba(166,224,221,1) 0%, rgba(252,223,174,1) 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6e0dd', endColorstr='#fcdfae', GradientType=0 );
-      }
-      @font-face {
-        font-family: "Grinched2";
-        src: url('Grinched2.ttf');
-      }
-      p {
-        width: 600px;
-        margin: 0 auto;
-        padding: .25em;
-        padding-bottom: .5em;
-        line-height: 19pt;
-        text-align: justify;
-      }
-      ::selection {
-        background: #FF33CC;
-        position: fixed;
-        height: 100%;
-        width: 100%;
-      }
-      h3.rant {
-        font-family: 'Grinched2';
-        width: 600px;
-        margin: 0 auto;
-        padding-bottom: 1.25em;
-        color: yellow;
-        font-size: 60px;
-      }
-      p.rant {
-        /* font-size: 600%; */
-        font-weight: lighter;
-        color: yellow;
-      }
-      #pallyBox {
-        position: fixed;
-        margin: 5% auto;
-        top:50px;
-        left: 0;
-        right: 0;
-      }
-      #bottom-floater {
-        position: fixed;
-        right: .5em;
-        bottom: .5em;
-        z-index: -1;
-        /*
-        -webkit-box-shadow: 7px 7px 22px -1px rgba(0,0,0,0.34);
-        -moz-box-shadow: 7px 7px 22px -1px rgba(0,0,0,0.34);
-        box-shadow: 7px 7px 22px -1px rgba(0,0,0,0.34);
-        */
-      }
-      #boom {
-        position: fixed;
-        bottom: 0px;
-        z-index: -2;
-      }
-      #twitchPlaya {
-      }
-      #twitchPlaya #live_embed_player_flash {
-        position: fixed;
-        top: -5%;
-        left: -5%;
-        z-index: -3;
-        width: 110%;
-        height: 110%;
-      }
-      #it {
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        left: 0;
-        top: 0;
-        z-index: -10;
-      }
-    </style>
-    <script type="text/javascript">
-     var _sf_async_config = _sf_async_config || {};
-     /** CONFIGURATION START **/
-     _sf_async_config.uid = 63821; //CHANGE THIS
-    _sf_async_config.domain = 'soakinthatlane.business'; //CHANGE THIS
-     /** CONFIGURATION END **/
-     var _sf_startpt = (new Date()).getTime();
-</script>
-<script src="//static.chartbeat.com/js/chartbeat_mab.js"></script>
-  </head>
-  <body>
-    <canvas height=1200 width=1200 id="it"></canvas>
-      <div class="container">
-        <div onmouseover="rotateDIV()" id="pallyBox" style="transform: rotate(360deg);">
-          <img src="Paladin.gif">
-          <img src="Paladin.gif">
-          <img src="Paladin.gif">
-          <img src="Paladin.gif">
-          <img src="Paladin.gif">
-        </div>
+    <head>
+        <script src="hax/head.js"></script>
+        <title>Ayyy</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.9.25/paper-full.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.0/react-dom.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.0/react.min.js"></script>
+        <link rel="stylesheet" href="./swag/swag.css" type="text/css">
+    </head>
+    <body class="soak">
+        <div class="main" role="main">
+            <canvas height=1200 width=1200 id="it" class="it"></canvas>
+            <section class="section-container">
+                <div onmouseover="rotateDIV()" id="pallyBox" class="pallyBox" style="transform: rotate(360deg);">
+                    <figure class="image-pally"></figure>
+                    <figure class="image-pally"></figure>
+                    <figure class="image-pally"></figure>
+                    <figure class="image-pally"></figure>
+                    <figure class="image-pally"></figure>
+                    <figure class="image-pally"></figure>
+                </div>
 
-      <div id="twitchPlaya">
-       <object type="application/x-shockwave-flash" id="live_embed_player_flash" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel=nalcs2" bgcolor="#000000">
-        <param name="allowFullScreen" value="true" />
-        <param name="allowScriptAccess" value="always" />
-        <param name="allowNetworking" value="all" />
-        <param name="movie" value="http://www.twitch.tv/widgets/live_embed_player.swf" />
-        <param name="flashvars" value="hostname=www.twitch.tv&channel=nalcs2&auto_play=true&start_volume=25" />
-        </object>
-      </div>
-      <h3 class="rant">SOAK DAT</h3>
-      <p class="rant">FIRST, I MUST SOLICIT YOUR STRICTEST CONFIDENCE IN THIS TRANSACTION. THIS IS BY VIRTUE OF ITS NATURE AS BEING UTTERLY CONFIDENTIAL AND 'TOP SECRET'. I AM SURE AND HAVE CONFIDENCE OF YOUR ABILITY AND RELIABILITY TO PROSECUTE A TRANSACTION OF THIS GREAT MAGNITUDE INVOLVING A PENDING TRANSACTION REQUIRING MAXIIMUM CONFIDENCE.</p>
-      <p class="rant">WE ARE TOP OFFICIAL OF THE FEDERAL GOVERNMENT CONTRACT REVIEW PANEL WHO ARE INTERESTED IN IMPORATION OF GOODS INTO OUR COUNTRY WITH FUNDS WHICH ARE PRESENTLY TRAPPED IN NIGERIA. IN ORDER TO COMMENCE THIS BUSINESS WE SOLICIT YOUR ASSISTANCE TO ENABLE US TRANSFER INTO YOUR ACCOUNT THE SAID TRAPPED FUNDS. 
-      <p class="rant">THE SOURCE OF THIS FUND IS AS FOLLOWS; DURING THE LAST MILITARY REGIME HERE IN NIGERIA, THE GOVERNMENT OFFICIALS SET UP COMPANIES AND AWARDED THEMSELVES CONTRACTS WHICH WERE GROSSLY OVER-INVOICED IN VARIOUS MINISTRIES. THE PRESENT CIVILIAN GOVERNMENT SET UP A CONTRACT REVIEW PANEL AND WE HAVE IDENTIFIED A LOT OF INFLATED CONTRACT FUNDS WHICH ARE PRESENTLY FLOATING IN THE CENTRAL BANK OF NIGERIA READY FOR PAYMENT.</p>
-      <p class="rant">HOWEVER, BY VIRTUE OF OUR POSITION AS CIVIL SERVANTS AND MEMBERS OF THIS PANEL, WE CANNOT ACQUIRE THIS MONEY IN OUR NAMES. I HAVE THEREFORE, BEEN DELEGATED AS A MATTER OF TRUST BY MY COLLEAGUES OF THE PANEL TO LOOK FOR AN OVERSEAS PARTNER INTO WHOSE ACCOUNT WE WOULD TRANSFER THE SUM OF US$21,320,000.00(TWENTY ONE MILLION, THREE HUNDRED AND TWENTY THOUSAND U.S DOLLARS). HENCE WE ARE WRITING YOU THIS LETTER. WE HAVE AGREED TO SHARE THE MONEY THUS; 1. 20% FOR THE ACCOUNT OWNER 2. 70% FOR US (THE OFFICIALS) 3. 10% TO BE USED IN SETTLING TAXATION AND ALL LOCAL AND FOREIGN EXPENSES. IT IS FROM THE 70% THAT WE WISH TO COMMENCE THE IMPORTATION BUSINESS.</p>
-      <p class="rant">PLEASE,NOTE THAT THIS TRANSACTION IS 100% SAFE AND WE HOPE TO COMMENCE THE TRANSFER LATEST SEVEN (7) BANKING DAYS FROM THE DATE OF THE RECEIPT OF THE FOLLOWING INFORMATIOM BY TEL/FAX; 234-1-7740449, YOUR COMPANY'S SIGNED, AND STAMPED LETTERHEAD PAPER THE ABOVE INFORMATION WILL ENABLE US WRITE LETTERS OF CLAIM AND JOB DESCRIPTION RESPECTIVELY. THIS WAY WE WILL USE YOUR COMPANY'S NAME TO APPLY FOR PAYMENT AND RE-AWARD THE CONTRACT IN YOUR COMPANY'S NAME.</p>
-      <p class="rant">WE ARE LOOKING FORWARD TO DOING THIS BUSINESS WITH YOU AND SOLICIT YOUR CONFIDENTIALITY IN THIS TRANSATION. PLEASE ACKNOWLEDGE THE RECEIPT OF THIS LETTER USING THE ABOVE TEL/FAX NUMBERS. I WILL SEND YOU DETAILED INFORMATION OF THIS PENDING PROJECT WHEN I HAVE HEARD FROM YOU.</p>
-      <p class="rant">YOURS FAITHFULLY,</p>
-      <p class="rant">DR CLEMENT OKON</p>
-      <p class="rant">NOTE; PLEASE QUOTE THIS REFERENCE NUMBER (VE/S/09/99) IN ALL YOUR RESPONSES.</p>
-    </div>
-    <img src="fireball.gif-c200" id="boom" height="1000" width="1000">
-    <img src="hackers.gif"  id="bottom-floater">
-    <script src="src/umbrella.js"></script>
-    <script>
-      ~function() {
+                <div id="twitchPlaya" class="twitchPlaya">
+                    <object type="application/x-shockwave-flash" id="live_embed_player_flash" class="live_embed_player_flash" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel=nalcs2" bgcolor="#000000">
+                    <param name="allowFullScreen" value="true" />
+                    <param name="allowScriptAccess" value="always" />
+                    <param name="allowNetworking" value="all" />
+                    <param name="movie" value="http://www.twitch.tv/widgets/live_embed_player.swf" />
+                    <param name="flashvars" value="hostname=www.twitch.tv&channel=nalcs2&auto_play=true&start_volume=25" />
+                    </object>
+                </div>
 
-        var app = new App('it');
+                <h1 class="rant-header">SOAK DAT</h1>
+                <p class="rant-text">FIRST, I MUST SOLICIT YOUR STRICTEST CONFIDENCE IN THIS TRANSACTION. THIS IS BY VIRTUE OF ITS NATURE AS BEING UTTERLY CONFIDENTIAL AND 'TOP SECRET'. I AM SURE AND HAVE CONFIDENCE OF YOUR ABILITY AND RELIABILITY TO PROSECUTE A TRANSACTION OF THIS GREAT MAGNITUDE INVOLVING A PENDING TRANSACTION REQUIRING MAXIIMUM CONFIDENCE.</p>
+                <p class="rant-text">WE ARE TOP OFFICIAL OF THE FEDERAL GOVERNMENT CONTRACT REVIEW PANEL WHO ARE INTERESTED IN IMPORATION OF GOODS INTO OUR COUNTRY WITH FUNDS WHICH ARE PRESENTLY TRAPPED IN NIGERIA. IN ORDER TO COMMENCE THIS BUSINESS WE SOLICIT YOUR ASSISTANCE TO ENABLE US TRANSFER INTO YOUR ACCOUNT THE SAID TRAPPED FUNDS. 
+                <p class="rant-text">THE SOURCE OF THIS FUND IS AS FOLLOWS; DURING THE LAST MILITARY REGIME HERE IN NIGERIA, THE GOVERNMENT OFFICIALS SET UP COMPANIES AND AWARDED THEMSELVES CONTRACTS WHICH WERE GROSSLY OVER-INVOICED IN VARIOUS MINISTRIES. THE PRESENT CIVILIAN GOVERNMENT SET UP A CONTRACT REVIEW PANEL AND WE HAVE IDENTIFIED A LOT OF INFLATED CONTRACT FUNDS WHICH ARE PRESENTLY FLOATING IN THE CENTRAL BANK OF NIGERIA READY FOR PAYMENT.</p>
+                <p class="rant-text">HOWEVER, BY VIRTUE OF OUR POSITION AS CIVIL SERVANTS AND MEMBERS OF THIS PANEL, WE CANNOT ACQUIRE THIS MONEY IN OUR NAMES. I HAVE THEREFORE, BEEN DELEGATED AS A MATTER OF TRUST BY MY COLLEAGUES OF THE PANEL TO LOOK FOR AN OVERSEAS PARTNER INTO WHOSE ACCOUNT WE WOULD TRANSFER THE SUM OF US$21,320,000.00(TWENTY ONE MILLION, THREE HUNDRED AND TWENTY THOUSAND U.S DOLLARS). HENCE WE ARE WRITING YOU THIS LETTER. WE HAVE AGREED TO SHARE THE MONEY THUS; 1. 20% FOR THE ACCOUNT OWNER 2. 70% FOR US (THE OFFICIALS) 3. 10% TO BE USED IN SETTLING TAXATION AND ALL LOCAL AND FOREIGN EXPENSES. IT IS FROM THE 70% THAT WE WISH TO COMMENCE THE IMPORTATION BUSINESS.</p>
+                <p class="rant-text">PLEASE,NOTE THAT THIS TRANSACTION IS 100% SAFE AND WE HOPE TO COMMENCE THE TRANSFER LATEST SEVEN (7) BANKING DAYS FROM THE DATE OF THE RECEIPT OF THE FOLLOWING INFORMATIOM BY TEL/FAX; 234-1-7740449, YOUR COMPANY'S SIGNED, AND STAMPED LETTERHEAD PAPER THE ABOVE INFORMATION WILL ENABLE US WRITE LETTERS OF CLAIM AND JOB DESCRIPTION RESPECTIVELY. THIS WAY WE WILL USE YOUR COMPANY'S NAME TO APPLY FOR PAYMENT AND RE-AWARD THE CONTRACT IN YOUR COMPANY'S NAME.</p>
+                <p class="rant-text">WE ARE LOOKING FORWARD TO DOING THIS BUSINESS WITH YOU AND SOLICIT YOUR CONFIDENTIALITY IN THIS TRANSATION. PLEASE ACKNOWLEDGE THE RECEIPT OF THIS LETTER USING THE ABOVE TEL/FAX NUMBERS. I WILL SEND YOU DETAILED INFORMATION OF THIS PENDING PROJECT WHEN I HAVE HEARD FROM YOU.</p>
+                <p class="rant-text">YOURS FAITHFULLY,</p>
+                <p class="rant-text">DR CLEMENT OKON</p>
+                <p class="rant-text">NOTE; PLEASE QUOTE THIS REFERENCE NUMBER (VE/S/09/99) IN ALL YOUR RESPONSES.</p>
 
-        ~function animationLoop() {
-          app.update();
-          app.draw();
-          // window.requestAnimationFrame(animationLoop);
-        }();
-      }();
-    </script>
-    <script>
-      ~function () {
-        var flag = true;
-        ~function loop() {
-          var el = document.getElementById('bottom-floater');
-          var style = flag ? 'none' : 'block';
-          el.style.display = style;
-          flag = !flag;
-          setTimeout(loop, 2000);
-        }();
-      }();
-    </script>
-    <script>
-      <!--
-      var x,n=0,ny=0,rotINT,rotYINT
-      function rotateDIV() {
+                <figure class="image-boom" id="boom"></figure>
+
+                <figure class="image-hackers blinker" id="hackers" data-blink='{"duration": 2000, "delay": 1000}'></figure>
+            </section>
+
+        </div><!-- main -->
+
+        <script>
+        <!--
+        var x,n=0,ny=0,rotINT,rotYINT
+        function rotateDIV() {
         x=document.getElementById("pallyBox")
         clearInterval(rotINT)
         rotINT=setInterval("startRotate()",10)
-      }
-      function startRotate() {
+        }
+        function startRotate() {
         n=n+1
         x.style.transform="rotate(" + n + "deg)"
         x.style.webkitTransform="rotate(" + n + "deg)"
         x.style.OTransform="rotate(" + n + "deg)"
         x.style.MozTransform="rotate(" + n + "deg)"
         if (n==180 || n==360)
-          {
-          clearInterval(rotINT)
-          if (n==360){n=0}
-          }
-      }
-      //-->
-  </script>
-  <script>
-    $("#pallyBox").click(function(){
+        {
+        clearInterval(rotINT)
+        if (n==360){n=0}
+        }
+        }
+        //-->
+        </script>
+        <script>
+        $("#pallyBox").click(function(){
         $("#pallyBox").animate({top: '+=27px'});
         //$("p").hide();
-    });
-  </script>
-  <audio preload="auto" autoplay>
-    <source src="omg/skrillez.mp3" type="audio/mpeg">
-  </audio>
-  <script type='text/javascript'>
-    var _sf_async_config = _sf_async_config || {};
-    /** CONFIGURATION START **/
-    _sf_async_config.useCanonical = true;
-    _sf_async_config.sections = 'Main'; //CHANGE THIS
-    _sf_async_config.authors = 'lolbaez'; //CHANGE THIS
-    /** CONFIGURATION END **/
-    (function() {
-        function loadChartbeat() {
-            window._sf_endpt = (new Date()).getTime();
-            var e = document.createElement('script');
-            e.setAttribute('language', 'javascript');
-            e.setAttribute('type', 'text/javascript');
-            e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
-            document.body.appendChild(e);
-        }
-        var oldonload = window.onload;
-        window.onload = (typeof window.onload != 'function') ?
-            loadChartbeat : function() {
-                oldonload();
-                loadChartbeat();
-            };
-    })();
-</script>
-  </body>
+        
+        });
+        </script>
+        <script src="hax/main.js"></script>
+        <!--<audio preload="auto" autoplay>
+        <source src="omg/skrillez.mp3" type="audio/mpeg">
+        </audio> -->
+    </body>
 </html>

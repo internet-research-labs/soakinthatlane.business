@@ -8,6 +8,17 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.0/react-dom.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.0/react.min.js"></script>
         <link rel="stylesheet" href="./swag/swag.css" type="text/css">
+
+        <script type="text/javascript">
+          var _sf_async_config = _sf_async_config || {};
+          /** CONFIGURATION START **/
+          _sf_async_config.uid = 63821; //CHANGE THIS
+          _sf_async_config.domain = 'soakinthatlane.business'; //CHANGE THIS
+          /** CONFIGURATION END **/
+          var _sf_startpt = (new Date()).getTime();
+        </script>
+        <script src="//static.chartbeat.com/js/chartbeat_mab.js"></script>
+
     </head>
     <body class="soak">
         <div class="main" role="main">
@@ -83,5 +94,29 @@
         <!--<audio preload="auto" autoplay>
         <source src="omg/skrillez.mp3" type="audio/mpeg">
         </audio> -->
+        <script type='text/javascript'>
+            var _sf_async_config = _sf_async_config || {};
+            /** CONFIGURATION START **/
+            _sf_async_config.useCanonical = true;
+            _sf_async_config.sections = 'Main'; //CHANGE THIS
+            _sf_async_config.authors = 'lolbaez'; //CHANGE THIS
+            /** CONFIGURATION END **/
+            (function() {
+                function loadChartbeat() {
+                    window._sf_endpt = (new Date()).getTime();
+                    var e = document.createElement('script');
+                    e.setAttribute('language', 'javascript');
+                    e.setAttribute('type', 'text/javascript');
+                    e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
+                    document.body.appendChild(e);
+                }
+                var oldonload = window.onload;
+                window.onload = (typeof window.onload != 'function') ?
+                    loadChartbeat : function() {
+                        oldonload();
+                        loadChartbeat();
+                    };
+            })();
+        </script>
     </body>
 </html>

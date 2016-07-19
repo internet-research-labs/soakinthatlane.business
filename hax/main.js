@@ -57,6 +57,7 @@
 	var App = __webpack_require__(3);
 	var Blinker = __webpack_require__(4);
 	var Rotator = __webpack_require__(5);
+	//var Clicker = __webpack_require__(6);
 
 
 	var Main = (function() {
@@ -66,10 +67,12 @@
 	        initialize: function() {
 	            this._blinkingStuff = [];
 	            this._rotatingStuff = [];
+	            //this._clickStuff = [];
 
 	            this._initApp();
 	            this._initBlinkers();
 	            this._initRotate();
+	            //this._initClick();
 
 	        },
 	        _initApp: function() {
@@ -99,6 +102,17 @@
 	                this._rotatingStuff.push(myRotator);
 	            }
 	        }
+	        /*_initClick: function() {
+	            var clickElements = document.querySelectorAll('[data-click]');
+	            var myLength = clickElements.length;
+	            for (var i = 0; i < myLength; i++) {
+	                var element = clickElements[i];
+	                var optionsData = element.getAttribute('data-click');
+	                var options = JSON.parse(optionsData);
+	                var myClicker = new Clicker(element, options);
+	                this._clickStuff.push(myClicker);
+	            }
+	        }*/
 
 
 	    };
@@ -226,6 +240,16 @@
 	'use strict';
 
 	var prefix = __webpack_require__(6);
+
+	/*function Clicker(element, options){
+		this._element = element || [];
+		this._options = options || [];
+		this._clickit = options._clickit || true;
+
+		this._on = false;
+
+		this._initialize();
+	}*/
 
 	function Rotator(element, options){
 	    this._element = element;

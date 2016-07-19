@@ -56,11 +56,27 @@ table {
   background-repeat: no-repeat;
   background-image: url("../Paladin.gif"); }
 
+.image-legion {
+  width: 1536px;
+  height: 896px;
+  background-size: 1536px 896px;
+  background-repeat: no-repeat;
+  background-image: url("../Legion.gif"); }
+
 .blinker {
   visibility: hidden;
   opacity: 0;
   display: none; }
   .blinker.blink {
+    visibility: visible;
+    opacity: 1;
+    display: block; }
+
+.clicker {
+  visibility: hidden;
+  opacity: 0;
+  display: none; }
+  .clicker.clicked {
     visibility: visible;
     opacity: 1;
     display: block; }
@@ -119,6 +135,11 @@ table {
     z-index: -2; }
   .soak .image-pally {
     display: inline-block; }
+  .soak .image-legion {
+    position: fixed;
+    left: .5em;
+    bottom: .5em;
+    z-index: -1; }
   .soak .twitchPlaya .live_embed_player_flash {
     position: fixed;
     top: -5%;

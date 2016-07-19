@@ -58,6 +58,14 @@
 	    return {
 
 	        initialize: function() {
+	        	var lezGo = window.confirm('lezz gooo? y/n');
+	        	var getIt = window.confirm('lezz get it? y/n');
+
+	        	var punk = !lezGo;
+	        	var bitch = !getIt;
+
+	        	if (!punk && !bitch) {}
+	        	else {window.location ="https://www.youtube.com/watch?v=R1JBQMXbN2k"};
 	            //console.log('do something before dom load maybe... really idk');
 	        }
 
